@@ -5,21 +5,39 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.kwyjibo.petchwerk.model.Piece;
+import com.kwyjibo.petchwerk.model.PlayerBoard;
 
 public class ModelTests {
-
+	
+	
+	/*@Test
+	public void testRotate() {
+		//create a piece, print and rotate
+		System.out.println("Create, print, rotate.");
+		Piece piece1 = new Piece(2, 2, 0, 1+2+64+128+4096);
+		piece1.printMe();
+		System.out.println("Rotate.");
+		piece1.rotate();
+		piece1.printMe();
+		System.out.println("Rotate.");
+		piece1.rotate();
+		piece1.printMe();
+		System.out.println("Rotate.");
+		piece1.rotate();
+		piece1.printMe();
+	}*/
+	
 	@Test
-	public void test() {
-		Piece piece1 = new Piece(2, 2, 0, 1+2+4+64+128+256);
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				if (piece1.getShape()[i][j]) {
-					System.out.print("[X]");
-				}
-				else System.out.print("[ ]");
-			}
-			System.out.println();
-		}
+	public void testPlayerBoard() {
+		PlayerBoard pb1 = new PlayerBoard();
+		Piece piece1 = new Piece(2, 2, 0, 1+2+64+128+4096);
+		piece1.rotate();
+		piece1.rotate();
+		pb1.placePiece(piece1, 1, 0);
+		piece1.rotate();
+		piece1.rotate();
+		pb1.placePiece(piece1, 10, 0);
+		pb1.printMe();
 	}
 
 }
