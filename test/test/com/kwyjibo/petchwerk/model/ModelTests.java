@@ -33,10 +33,10 @@ public class ModelTests {
 		Piece piece1 = new Piece(2, 2, 0, 1+2+64+128+4096);
 		piece1.rotate();
 		piece1.rotate();
-		pb1.placePiece(piece1, 1, 0);
-		piece1.rotate();
-		piece1.rotate();
-		pb1.placePiece(piece1, 10, 0);
+		pb1.placePiece(piece1, 0, 0);
+		pb1.placePiece(piece1, 1, 0); //should fail
+		pb1.placePiece(piece1, 6, 6);
+		pb1.placePiece(piece1, 7, 6); //should fail
 		pb1.printMe();
 	}
 

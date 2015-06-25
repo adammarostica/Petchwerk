@@ -21,9 +21,9 @@ public class PlayerBoard {
 		try {
 			for (int i = 0; i < 5; i++) {
 				for (int j = 0; j < 5; j++) {
-					if (this.spots[x+i][y+j] == true &&
-							piece.getShape()[i][j] == true) {
-						canPlace = false;
+					if (piece.getShape()[i][j] == true &&
+							this.spots[x+i][y+j] == true) {
+								canPlace = false;
 					}
 				}
 			}
@@ -43,10 +43,10 @@ public class PlayerBoard {
 					}
 				}
 			}
-			else System.out.println("Placement failed.");
+			else System.out.println("Placement at " + x + ", " + y + " failed. Existing piece.");
 		}
 		catch (Exception e) {
-			System.out.println("Placement failed.");
+			System.out.println("Placement at " + x + ", " + y + " failed. Out of bounds.");
 		}
 		finally {}
 	}
